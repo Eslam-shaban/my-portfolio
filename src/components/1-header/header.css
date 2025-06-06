@@ -72,19 +72,33 @@ header button.mode {
     border-radius: 50%;
     justify-content: center;
     color: var(--subtitle);
-    border: 1px solid rgba(244, 165, 96, 0.249);
+    border: 1px solid rgba(96, 168, 244, 0.249);
     transition: 0.2s;
     font-size: 1.5rem;
 }
 
 header .icon-btn:hover,
 header button.mode:hover {
-    color: var(--title);
+    color: var(--blue);
+    border: 1px solid rgb(96, 133, 244);
+}
+
+.light header .icon-btn:hover,
+.light header button.mode:hover {
+    color: rgb(244, 165, 96);
     border: 1px solid rgb(244, 165, 96);
 }
 
 header button.mode {
     margin-left: 0.5rem;
+    box-shadow: 1px 1px 26px rgba(96, 133, 244, 0.46);
+
+}
+
+.light header button.mode {
+    border: 1px solid rgba(244, 165, 96, 0.249);
+    color: rgb(244, 165, 96);
+    box-shadow: 1px 1px 26px rgb(244 165 96 / 46%);
 }
 
 header .icon-close {
