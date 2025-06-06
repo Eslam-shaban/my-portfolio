@@ -1,7 +1,13 @@
 import './contact.css'
 import { TbMailFilled } from "react-icons/tb";
+import { useForm, ValidationError } from '@formspree/react';
+import Lottie from 'lottie-react';
+import doneAnimation from '../../../public/animations/done.json'
+import contactAnimation from '../../../public/animations/contact.json'
 
 const Contact = () => {
+    const [state, handleSubmit] = useForm("mwpbvbak");
+
     return (
         <section className="contact-us">
             <h1 className="title">
@@ -13,21 +19,37 @@ const Contact = () => {
                 something new.
             </p>
 
-            <div className="flex">
-                <form className="">
+            <div style={{ justifyContent: "space-between" }} className="flex">
+                <form onSubmit={handleSubmit}>
                     <div className="flex">
                         <label htmlFor="email">Email Address:</label>
-                        <input required type="email" name="" id="email" />
+                        <input id="email" type="email" name="email" required autoComplete='off' />
+                        <ValidationError prefix="Email" field="email" errors={state.errors} />
                     </div>
 
                     <div className="flex" style={{ marginTop: "24px" }}>
                         <label htmlFor="message">Your message:</label>
-                        <textarea required name="" id="message"></textarea>
+                        <textarea id="message" name="message" required />
+                        <ValidationError prefix="Message" field="message" errors={state.errors} />
                     </div>
 
-                    <button className="submit">Submit</button>
+                    <button className="submit" type="submit" disabled={state.submitting}>
+                        {(state.submitting ? "Submitting ..." : "Submit")}
+                    </button>
+
+                    {state.succeeded && (
+
+                        <p className='succeeded-msg'>
+                            <Lottie loop={false} style={{ height: 55 }} animationData={doneAnimation} />
+                            Your message has been sent successfully 👌
+
+                        </p>
+                    )}
                 </form>
-                <div className="border animation">animation</div>
+                <div className="animation">
+                    <Lottie style={{ height: 350 }} animationData={contactAnimation} />
+
+                </div>
             </div>
         </section>
     );

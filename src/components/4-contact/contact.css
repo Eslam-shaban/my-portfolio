@@ -31,16 +31,28 @@ section.contact-us #message {
     border-radius: 5px;
     transition: 0.3s;
     font-size: 1.1rem;
+    color: var(--contacts-color);
+}
+
+.light section.contact-us #email,
+.light section.contact-us #message {
+    background-color: rgba(255, 255, 255, 0.162);
+    border: 1px solid rgb(128, 128, 128, 0.451);
+    box-shadow: 1px 1px 1px rgb(73, 73, 75, 0.105);
 }
 
 section.contact-us #email:focus,
-section.contact-us #message:focus {
-    border: 1px solid rgb(45 212 191);
-}
-
+section.contact-us #message:focus,
 section.contact-us #email:hover,
 section.contact-us #message:hover {
     border: 1px solid rgb(45 212 191);
+}
+
+.light section.contact-us #message:focus,
+.light section.contact-us #email:hover,
+.light section.contact-us #email:focus,
+.light section.contact-us #message:hover {
+    border: 1px solid rgb(79 80 80);
 }
 
 section.contact-us #message {
@@ -66,9 +78,24 @@ section.contact-us .submit:hover {
     scale: 0.97;
 }
 
+.succeeded-msg {
+    display: flex;
+    font-size: 18px;
+    margin-top: 1.7rem;
+    color: var(--title);
+    justify-content: center;
+    align-items: center;
+}
+
 /* =====================================
   3- Responsive Design (media query)
 ======================================== */
+@media (max-width: 1200px) {
+
+    section.contact-us .animation {
+        display: none;
+    }
+}
 
 @media (max-width: 600px) {
     section.contact-us .animation {
