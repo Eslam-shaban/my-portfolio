@@ -2,14 +2,14 @@ import './contact.css'
 import { TbMailFilled } from "react-icons/tb";
 import { useForm, ValidationError } from '@formspree/react';
 import Lottie from 'lottie-react';
-import doneAnimation from '../../../public/animations/done.json'
-import contactAnimation from '../../../public/animations/contact.json'
+import doneAnimation from '../../animations/done.json'
+import contactAnimation from '../../animations/contact.json'
 
 const Contact = () => {
     const [state, handleSubmit] = useForm("mwpbvbak");
 
     return (
-        <section className="contact-us">
+        <section className="contact-us" id='contact'>
             <h1 className="title">
                 <span className="icon-envelope"><TbMailFilled /> </span>
                 Contact us

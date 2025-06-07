@@ -4,23 +4,35 @@ import { SiGithub } from "react-icons/si";
 import { SiLinkedin } from "react-icons/si";
 import { SiExpensify } from "react-icons/si";
 import { SiGmail } from "react-icons/si";
-
+import Lottie from 'lottie-react';
+import devAnimation from '../../animations/dev.json'
+import { useRef } from 'react';
+import { motion } from "motion/react"
 
 const Hero = () => {
+    const lottieRef = useRef();
     return (
         <section className="hero flex">
             <div className="left-section  ">
                 <div className="parent-avatar flex">
-                    <img src="./me.jpg" className="avatar" alt="" />
+                    <motion.img
+                        initial={{ transform: "scale(0)" }}
+                        animate={{ transform: "scale(1.1)" }}
+                        transition={{ dumping: 6, type: "spring", stiffness: 100 }}
+                        src="./me.jpg" className="avatar" alt="" />
                     <div className="icon-verified">
                         <MdVerified />
                     </div>
                 </div>
 
-                <h1 className="title">
+                <motion.h1
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 2 }}
+                    className="title" id='about'>
                     {/* Software designer, founder, and amateur astronaut. */}
                     Software Engineer | Frontend Developer | Passionate about Data Analytics.
-                </h1>
+                </motion.h1 >
                 <p className="sub-title">
                     {/* I’m Ali Hassan, a software designer and entrepreneur based in New York
                     City. I’m the founder and CEO of Planetaria, where we develop
@@ -30,14 +42,26 @@ const Hero = () => {
                 </p>
 
                 <div className="all-icons flex">
-                    <div className="icon icon-linkedin"><SiLinkedin /></div>
-                    <div className="icon icon-github"> <SiGithub /></div>
-                    <div className="icon icon-my-portfolio"><SiExpensify /></div>
-                    <div className="icon icon-gmail"><SiGmail /> </div>
+                    <div className="icon icon-linkedin"><a href="https://www.linkedin.com/in/eslam-shaban-170/" target="_blank"><SiLinkedin /></a></div>
+                    <div className="icon icon-github"><a href="https://github.com/Eslam-shaban" target="_blank"><SiGithub /></a></div>
+                    <div className="icon icon-my-portfolio"><a href="https://eslam-shaban.github.io/EslamPorfolio.github.io/DataScience.html" target="_blank"><SiExpensify /></a></div>
+                    <div className="icon icon-gmail"><button
+                        onClick={() => {
+                            window.location.href = "mailto:eslamshaban170@gmail.com";
+                        }}><SiGmail /></button> </div>
                 </div>
             </div>
 
-            <div className="right-section animation border">animation</div>
+            <div className="right-section animation ">
+                <Lottie
+                    lottieRef={lottieRef}
+                    onLoadedImages={() => {
+                        // https://lottiereact.com/
+                        lottieRef.current.setSpeed(0.5)
+                    }}
+                    style={{ height: 350, width: 400 }} animationData={devAnimation} />
+
+            </div>
         </section>
     );
 }

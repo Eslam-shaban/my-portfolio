@@ -4,7 +4,8 @@ import { FiLink } from "react-icons/fi";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { useState } from 'react';
 import { projectsArr } from './ProjectsData.js'
-
+import { motion } from 'motion/react';
+import { AnimatePresence } from 'motion/react';
 const Main = () => {
     const [activeBtn, setActiveBtn] = useState("all");
     const [arr, setArr] = useState(projectsArr);
@@ -27,7 +28,7 @@ const Main = () => {
         }
     }
     return (
-        <main className="flex">
+        <main className="flex" id='projects'>
 
             <section className="flex  left-section">
                 <button className={activeBtn === "all" ? "active" : null}
@@ -45,35 +46,46 @@ const Main = () => {
             </section>
 
             <section className=" flex right-section">
-                {arr.map((item) => {
-                    return (
-                        <article key={item.projectTitle} className="card">
-                            <img width={266} src={item.imgPath} alt="" />
 
-                            <div style={{ width: "266px" }} className="box">
-                                <h1 className="title">{item.projectTitle}</h1>
-                                <p className="sub-title">
-                                    {item.description}
-                                </p>
+                <AnimatePresence>
+                    {arr.map((item) => {
+                        return (
 
-                                <div className="flex icons">
-                                    <div style={{ gap: "11px" }} className="flex">
-                                        <div className="icon-link"><FiLink /> </div>
-                                        <div className="icon-github"><SiGithub /></div>
+                            <motion.article
+                                layout
+                                initial={{ transform: "scale(0)" }}
+                                animate={{ transform: "scale(1)" }}
+                                transition={{ damping: 10, type: "spring", stiffness: 70 }}
+
+
+                                key={item.projectTitle} className="card">
+                                <img width={266} src={item.imgPath} alt="" />
+
+                                <div style={{ width: "266px" }} className="box">
+                                    <h1 className="title">{item.projectTitle}</h1>
+                                    <p className="sub-title">
+                                        {item.description}
+                                    </p>
+
+                                    <div className="flex icons">
+                                        <div style={{ gap: "11px" }} className="flex">
+                                            <div className="icon-link"><FiLink /> </div>
+                                            <div className="icon-github"><SiGithub /></div>
+                                        </div>
+
+                                        <a className="link flex" href="">
+                                            <span>
+                                                more
+                                            </span>
+                                            <FaArrowRightLong
+                                                className="icon-arrow-right" />
+                                        </a>
                                     </div>
-
-                                    <a className="link flex" href="">
-                                        <span>
-                                            more
-                                        </span>
-                                        <FaArrowRightLong
-                                            className="icon-arrow-right" />
-                                    </a>
                                 </div>
-                            </div>
-                        </article>
-                    );
-                })}
+                            </motion.article>
+                        );
+                    })}
+                </AnimatePresence>
             </section>
         </main>
     );
