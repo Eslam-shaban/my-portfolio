@@ -34,15 +34,13 @@ const Main = () => {
                 <button className={activeBtn === "all" ? "active" : null}
                     onClick={() => getProjectsByCategory("all")}>all projects</button>
                 <button className={activeBtn === "css" ? "active" : null}
-                    onClick={() => getProjectsByCategory("css")}>HTML & CSS</button>
-                <button className={activeBtn === "js" ? "active" : null}
-                    onClick={() => getProjectsByCategory("js")}>JavaScript</button>
+                    onClick={() => getProjectsByCategory("css")}>HTML & CSS & JS</button>
                 <button className={activeBtn === "libraries" ? "active" : null}
                     onClick={() => getProjectsByCategory("libraries")}>bootstap | tailwind</button>
                 <button className={activeBtn === "react" ? "active" : null}
                     onClick={() => getProjectsByCategory("react")}>Reactjs</button>
-                <button className={activeBtn === "fullStack" ? "active" : null}
-                    onClick={() => getProjectsByCategory("fullStack")}>Full Stack</button>
+                <button className={activeBtn === "fullstack" ? "active" : null}
+                    onClick={() => getProjectsByCategory("fullstack")}>Full Stack</button>
             </section>
 
             <section className=" flex right-section">
@@ -59,7 +57,7 @@ const Main = () => {
 
 
                                 key={item.projectTitle} className="card">
-                                <img width={266} src={item.imgPath} alt="" />
+                                <img width={266} height={150} src={item.imgPath} alt="" />
 
                                 <div style={{ width: "266px" }} className="box">
                                     <h1 className="title">{item.projectTitle}</h1>
@@ -68,12 +66,12 @@ const Main = () => {
                                     </p>
 
                                     <div className="flex icons">
-                                        <div style={{ gap: "11px" }} className="flex">
-                                            <div className="icon-link"><FiLink /> </div>
-                                            <div className="icon-github"><SiGithub /></div>
+                                        <div style={{ gap: "20px" }} className="flex">
+                                            <div className="icon-link"><a href={item.url} target="_blank" ><FiLink /></a></div>
+                                            <div className="icon-github"><a href={item.github} target="_blank" ><SiGithub /></a></div>
                                         </div>
 
-                                        <a className="link flex" href="">
+                                        <a className="link flex" href={item.url} target="_blank">
                                             <span>
                                                 more
                                             </span>

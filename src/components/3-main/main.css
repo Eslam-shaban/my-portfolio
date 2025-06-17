@@ -115,11 +115,17 @@ main section.right-section.flex {
     margin-right: 12px;
     justify-content: space-between;
     gap: 6px;
+    transition: 0.3s;
+}
+
+.card a.link:hover {
+    scale: 1.1;
 }
 
 .card a.link .icon-arrow-right {
     margin-bottom: -2px;
 }
+
 
 /* =============================
  style in light mode
@@ -128,6 +134,11 @@ main section.right-section.flex {
     border: none;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.16),
         -1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+.light .card:hover {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2),
+        -2px 2px 3px rgba(0, 0, 0, 0.15);
 }
 
 .light main section.left-section.flex button.active {

@@ -30,14 +30,9 @@ const Hero = () => {
                     animate={{ opacity: 1 }}
                     transition={{ duration: 2 }}
                     className="title" id='about'>
-                    {/* Software designer, founder, and amateur astronaut. */}
                     Software Engineer | Frontend Developer | Passionate about Data Analytics.
                 </motion.h1 >
                 <p className="sub-title">
-                    {/* I’m Ali Hassan, a software designer and entrepreneur based in New York
-                    City. I’m the founder and CEO of Planetaria, where we develop
-                    technologies that empower regular people to explore space on their own
-                    terms. */}
                     I’m Eslam Shaban, a frontend developer with a strong interest in full-stack development and a passion for data. While I focus on building modern, responsive user interfaces, I’m actively expanding my skills across the stack. I’m also deeply interested in data analytics, data science, and AI—fields I believe are driving the future of technology.
                 </p>
 
