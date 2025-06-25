@@ -35,9 +35,16 @@ export const projectsArr = [
         projectTitle: "Product Preview Card",
         category: ["css"],
         description: "Frontend Mentor challenge to recreate a clean and responsive product preview card using only HTML and CSS.",
-        imgPath: './f-mentor-1.png',
+        imgPath: './f-mentor-1.jpg',
         url: "https://eslam-product-preview-card.netlify.app/",
         github: "https://github.com/Eslam-shaban/product-preview-card"
+    }, {
+        projectTitle: "FAQ Accordion ",
+        category: ["css"],
+        description: "Frontend Mentor challenge to recreate a clean and responsive FAQ-Accordion using only HTML, CSSand JavaScript.",
+        imgPath: './f-mentor-2.jpg',
+        url: "https://eslam-shaban.github.io/faq-accordion/",
+        github: "https://github.com/Eslam-shaban/faq-accordion"
     },
     {
         projectTitle: "Bondi Bootstrap Landing Page",
