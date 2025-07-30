@@ -5,7 +5,7 @@ import Main from "./components/3-main/Main"
 import Contact from "./components/4-contact/Contact"
 import Footer from "./components/5-footer/Footer"
 import { FaAngleUp } from "react-icons/fa";
-import Skills from "./components/skills/skills"
+import Skills from "./components/skills/Skills"
 import Experience from "./components/experiance/Experiance"
 
 
