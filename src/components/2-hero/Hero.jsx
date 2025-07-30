@@ -29,21 +29,29 @@ const Hero = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 2 }}
-                    className="title" id='about'>
-                    Software Engineer | Frontend Developer | Passionate about Data Analytics.
-                </motion.h1 >
+                    className="title"
+                    id="about"
+                >
+                    Software Engineer | Frontend Developer
+                </motion.h1>
                 <p className="sub-title">
-                    I’m Eslam Shaban, a frontend developer with a strong interest in full-stack development and a passion for data. While I focus on building modern, responsive user interfaces, I’m actively expanding my skills across the stack. I’m also deeply interested in data analytics, data science, and AI—fields I believe are driving the future of technology.
+                    I'm Eslam Shaban, a frontend developer with a degree in Computer Science and a strong drive toward full-stack development. I specialize in building modern, responsive user interfaces with React, and I’m actively expanding my backend skills to become a well-rounded full-stack engineer.
                 </p>
 
                 <div className="all-icons flex">
-                    <div className="icon icon-linkedin"><a href="https://www.linkedin.com/in/eslam-shaban-170/" target="_blank"><SiLinkedin /></a></div>
-                    <div className="icon icon-github"><a href="https://github.com/Eslam-shaban" target="_blank"><SiGithub /></a></div>
+                    <div className="icon icon-linkedin"><a href="https://www.linkedin.com/in/eslam-shaban-170/" target="_blank" title="Connect with me on LinkedIn"><SiLinkedin /></a></div>
+                    <div className="icon icon-github"><a href="https://github.com/Eslam-shaban" target="_blank" title="Visit my GitHub profile"><SiGithub /></a></div>
                     <div className="icon icon-my-portfolio"><a href="https://eslam-shaban.github.io/EslamPorfolio.github.io/DataScience.html" target="_blank"><SiExpensify /></a></div>
-                    <div className="icon icon-gmail"><button
-                        onClick={() => {
-                            window.location.href = "mailto:eslamshaban170@gmail.com";
-                        }}><SiGmail /></button> </div>
+                    <div className="icon icon-gmail">
+                        <button
+                            onClick={() => {
+                                window.location.href = "mailto:eslamshaban170@gmail.com";
+                            }}
+                            title="Send me an email"
+                        >
+                            <SiGmail />
+                        </button>
+                    </div>
                 </div>
             </div>
 

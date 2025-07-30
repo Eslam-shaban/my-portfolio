@@ -4,6 +4,7 @@ import { useForm, ValidationError } from '@formspree/react';
 import Lottie from 'lottie-react';
 import doneAnimation from '../../animations/done.json'
 import contactAnimation from '../../animations/contact.json'
+import { contactInfo } from '../3-main/ProjectsData.jsx';
 
 const Contact = () => {
     const [state, handleSubmit] = useForm("mwpbvbak");
@@ -14,11 +15,24 @@ const Contact = () => {
                 <span className="icon-envelope"><TbMailFilled /> </span>
                 Contact us
             </h1>
+
+            {contactInfo.map((info, key) => {
+                return (
+                    <div key={key} className='contact-info flex'>
+                        <div className="contact-container flex">
+                            <span className="contact-icon">{info.contactIcon}</span>
+                            <span className="contact-name">{info.contactName}:</span>
+                        </div>
+                        <a href={info.conactSource} target="_blank" rel="noopener noreferrer" className="contact-value">
+                            {info.contactValue}
+                        </a>
+                    </div>
+                )
+            })}
             <p className="sub-title">
                 Contact us for more information and Get notified when I publish
                 something new.
             </p>
-
             <div style={{ justifyContent: "space-between" }} className="flex">
                 <form onSubmit={handleSubmit}>
                     <div className="flex">

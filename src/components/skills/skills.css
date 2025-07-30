@@ -1,0 +1,36 @@
+.skills-section {
+    width: 100%;
+    margin-top: 3rem;
+    padding: 1rem;
+}
+
+.skills-title {
+    font-size: 1.8rem;
+    color: var(--title);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.skill-item {
+    background-color: var(--card-bg-color);
+    color: var(--title);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.skill-item:hover {
+    background-color: var(--btn-bg-color);
+}

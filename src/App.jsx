@@ -5,6 +5,8 @@ import Main from "./components/3-main/Main"
 import Contact from "./components/4-contact/Contact"
 import Footer from "./components/5-footer/Footer"
 import { FaAngleUp } from "react-icons/fa";
+import Skills from "./components/skills/skills"
+import Experience from "./components/experiance/Experiance"
 
 
 function App() {
@@ -27,6 +29,10 @@ function App() {
       <Hero />
       <div className="divider" />
       <Main />
+      <div className="divider" />
+      <Skills />
+      <div className="divider" />
+      <Experience />
       <div className="divider" />
       <Contact />
       <div className="divider" />

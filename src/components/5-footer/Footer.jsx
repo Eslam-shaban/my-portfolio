@@ -18,7 +18,7 @@ const Footer = () => {
                 </li>
             </ul>
 
-            <p>© 2023 Spencer Sharp. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} by Eslam Shaban. All rights reserved.</p>
         </footer>
     );
 }

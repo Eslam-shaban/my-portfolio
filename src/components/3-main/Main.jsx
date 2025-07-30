@@ -3,7 +3,7 @@ import { SiGithub } from "react-icons/si";
 import { FiLink } from "react-icons/fi";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { useState } from 'react';
-import { projectsArr } from './ProjectsData.js'
+import { projectsArr } from './ProjectsData.jsx'
 import { motion } from 'motion/react';
 import { AnimatePresence } from 'motion/react';
 const Main = () => {
@@ -38,7 +38,7 @@ const Main = () => {
                 <button className={activeBtn === "libraries" ? "active" : null}
                     onClick={() => getProjectsByCategory("libraries")}>bootstap | tailwind</button>
                 <button className={activeBtn === "react" ? "active" : null}
-                    onClick={() => getProjectsByCategory("react")}>Reactjs</button>
+                    onClick={() => getProjectsByCategory("react")}>Reactjs | Nextjs</button>
                 <button className={activeBtn === "fullstack" ? "active" : null}
                     onClick={() => getProjectsByCategory("fullstack")}>Full Stack</button>
             </section>
@@ -67,17 +67,28 @@ const Main = () => {
 
                                     <div className="flex icons">
                                         <div style={{ gap: "20px" }} className="flex">
-                                            <div className="icon-link"><a href={item.url} target="_blank" ><FiLink /></a></div>
-                                            <div className="icon-github"><a href={item.github} target="_blank" ><SiGithub /></a></div>
+                                            <div className="icon-link" title='Live Demo'><a href={item.url} target="_blank" ><FiLink /></a></div>
+                                            <div className="icon-github" title='Github Repo'><a href={item.github} target="_blank" ><SiGithub /></a></div>
                                         </div>
 
                                         <a className="link flex" href={item.url} target="_blank">
                                             <span>
-                                                more
+                                                Live Demo
                                             </span>
                                             <FaArrowRightLong
                                                 className="icon-arrow-right" />
                                         </a>
+                                    </div>
+                                    <div className='tech flex'>
+                                        {item.tech ? (item.tech.map((tech, index) => {
+                                            return (
+                                                <span key={index} className="tech-item">{tech}</span>
+                                            )
+                                        }))
+                                            :
+                                            ""
+                                        }
+
                                     </div>
                                 </div>
                             </motion.article>

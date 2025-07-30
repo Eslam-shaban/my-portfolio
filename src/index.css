@@ -34,6 +34,8 @@ html {
       rgba(255, 255, 255, 0.05)); */
   --card-bg-color: rgba(255, 255, 255, 0.05);
   --contacts-color: #fff;
+  --link-color: #fff;
+  --tech-color: #000;
 }
 
 .light {
@@ -48,6 +50,8 @@ html {
   --btn-bg-color: rgb(42 44 60);
   --card-bg-color: rgba(43, 33, 150, 0.05);
   --contacts-color: #000;
+  --link-color: #000;
+  --tech-color: #fff;
 }
 
 body {

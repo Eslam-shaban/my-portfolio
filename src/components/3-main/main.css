@@ -68,7 +68,6 @@ main section.right-section.flex {
 .card:hover {
     border: 1px solid var(--blue);
     transform: scale(1.01) rotate(1deg);
-    cursor: pointer;
 }
 
 .card img {
@@ -111,21 +110,40 @@ main section.right-section.flex {
 
 .card a.link {
     font-size: 0.9rem;
-    color: var(--blue);
+    color: var(--link-color);
+    padding: 2px 4px;
+    border-radius: 3px;
     margin-right: 12px;
     justify-content: space-between;
     gap: 6px;
     transition: 0.3s;
+    animation: link-move 1.5s infinite;
 }
 
 .card a.link:hover {
     scale: 1.1;
+    color: var(--blue);
 }
 
 .card a.link .icon-arrow-right {
     margin-bottom: -2px;
 }
 
+.card .tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 0.7rem;
+}
+
+.card .tech span {
+    background-color: var(--blue);
+    color: var(--tech-color);
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
 
 /* =============================
  style in light mode
@@ -168,4 +186,24 @@ main section.right-section.flex {
         padding: 0.8rem 0;
         font-size: 0.9rem;
     }
+}
+
+
+/* =====================================
+  4- Animation and transition styles
+======================================== */
+
+@keyframes link-move {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(3px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+
 }
